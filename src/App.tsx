@@ -1,12 +1,16 @@
-import './App.css'
+// import { Suspense } from "react";
+import "./App.css";
+import { userCounter } from "./store";
 
 function App() {
-
+  let count=userCounter(state=>state.counter)
+  let inc=userCounter(state=>state.inc)
   return (
     <>
-      <div className='text-[#04006a] text-[400px]'>app</div>
+      <h1>count:{count}</h1>
+      <button onClick={inc}>+</button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
